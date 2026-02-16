@@ -22,3 +22,11 @@ jobs:
 
       - name: Run analysis script
         run: python src/rank_programs.py
+              - name: Commit and push outputs
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add outputs/
+          git commit -m "Auto-update outputs"
+          git push
+
